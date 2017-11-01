@@ -6,7 +6,7 @@ new Vue({
     components: {
         'movie-list':{
             template: `<div id="movie-list">
-                            <div v-for="movie in movies" class="">{{movie.title}}</div>
+                            <div v-for="movie in movies" class="movie">{{movie.title}}</div>
                         </div>`,
             data(){
                 return {
@@ -21,7 +21,13 @@ new Vue({
         'movie-filter':{
             template: `<div id="movie-filter">
                            <h2>Filter results</h2>
-                        </div>`
+                            <check-filter></check-filter>
+                        </div>`,
+            components: {
+                'check-filter':{
+                    template: `<div>Filter</div>`
+                }
+            }
         }
     }
 });
