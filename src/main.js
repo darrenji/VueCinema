@@ -1,3 +1,9 @@
+import Vue from 'vue';
 import './style.scss';
 
-console.log('haha');
+new Vue({
+    el: '#app',
+    data: {
+        msg: 'Hello World'
+    }
+});
