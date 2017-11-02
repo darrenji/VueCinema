@@ -35,9 +35,14 @@ new Vue({
                 };
             },
             props: ['genre', 'time'],
+            methods: {
+              moviePassesGenreFilter(movie){
+                  return true;
+              }  
+            },
             computed: {
                 filteredMovies(){
-                    return this.movies;
+                    return this.movies.filter(this.moviePassesGenreFilter);
                 }
             }
         },
