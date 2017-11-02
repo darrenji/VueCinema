@@ -11,7 +11,7 @@
         data(){
                 return {
                     movies: [
-                        {title: 'Pulp Fiction', genre: genres.CRIME},
+                        {title: 'Kill Bill', genre: genres.CRIME},
                         {title: 'Home Alone', genre: genres.COMEDY},
                         {title: 'Austin Powers', genre: genres.COMEDY}
                     ]

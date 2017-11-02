@@ -5,6 +5,9 @@ import genres from './util/genres';
 import MovieList from './components/MovieList.vue';
 import MovieFilter from './components/MovieFilter.vue';
 
+import VueResource from 'vue-resource';
+Vue.use(VueResource);
+
 new Vue({
     el: '#app',
     data: {
@@ -26,5 +29,8 @@ new Vue({
     components: {
          MovieList,
          MovieFilter
+    },
+    created(){
+        console.log(this.$http);
     }
 });
