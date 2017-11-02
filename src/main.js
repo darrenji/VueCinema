@@ -12,7 +12,8 @@ new Vue({
     el: '#app',
     data: {
         genre: [],
-        time: []
+        time: [],
+        movies: []
     },
     methods:{
         checkFilter(category, title, checked){
@@ -32,7 +33,7 @@ new Vue({
     },
     created(){
         this.$http.get('/api').then(response => {
-            console.log(response);
+            this.movies = response.data;
         })
     }
 });
