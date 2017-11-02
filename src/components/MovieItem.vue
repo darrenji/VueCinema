@@ -9,7 +9,9 @@
                 <span class="movie-rating">{{movie.Rated}}</span>
             </div>
             <div class="movie-sessions">
-                
+                <div class="session-time-wrapper" v-for="session in sessions">
+                    <div class="session-time">{{session.time}}</div>
+                </div>
             </div>
         </div>
     </div>
