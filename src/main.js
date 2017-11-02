@@ -8,12 +8,18 @@ import MovieFilter from './components/MovieFilter.vue';
 import VueResource from 'vue-resource';
 Vue.use(VueResource);
 
+
+import moment from 'moment-timezone';
+//为Vue的原型对象添加新的属性$moment
+Object.defineProperty(Vue.prototype, '$moment', {get(){ return this.$root.moment }});
+
 new Vue({
     el: '#app',
     data: {
         genre: [],
         time: [],
-        movies: []
+        movies: [],
+        moment
     },
     methods:{
         checkFilter(category, title, checked){
