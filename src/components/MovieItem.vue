@@ -10,7 +10,7 @@
             </div>
             <div class="movie-sessions">
                 <div class="session-time-wrapper" v-for="session in sessions">
-                    <div class="session-time">{{session.time}}</div>
+                    <div class="session-time">{{formatSessionTime(session.time)}}</div>
                 </div>
             </div>
         </div>
@@ -20,6 +20,11 @@
 
 <script>
     export default {
-        props: ['movie','sessions']
+        props: ['movie','sessions'],
+        methods: {
+            formatSessionTime(rawTime) {
+                return this.$moment(rawTime).format('h:mm A');
+            }
+        }
     }
 </script>
