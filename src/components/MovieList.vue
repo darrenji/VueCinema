@@ -17,7 +17,7 @@
     import genres from '../util/genres';
     import MovieItem from './MovieItem.vue';
     export default {
-            props: ['genre', 'time', 'movies'],
+            props: ['genre', 'time', 'movies', 'day'],
             methods: {
               moviePassesGenreFilter(movie){
                   if(!this.genre.length){
