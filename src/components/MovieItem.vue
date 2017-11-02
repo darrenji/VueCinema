@@ -26,7 +26,9 @@
                 return this.$moment(rawTime).format('h:mm A');
             },
             filteredSession(sessions){
-                return sessions;
+                return sessions.filter(session => {
+                    return this.$moment(session.time).isSame(this.day, 'day');
+                });
             }
         }
     }
