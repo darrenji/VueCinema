@@ -37,7 +37,11 @@ new Vue({
             props: ['genre', 'time'],
             methods: {
               moviePassesGenreFilter(movie){
-                  return true;
+                  if(!this.genre.length){
+                      return true;
+                  }
+                  //遍历每个movie的genre是否在genre数组中
+                  return this.genre.find(genre => movie.genre === genre);
               }  
             },
             computed: {
