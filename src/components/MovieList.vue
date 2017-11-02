@@ -15,8 +15,16 @@
                   if(!this.genre.length){
                       return true;
                   } else {
-                      //遍历每个movie的genre是否在genre数组中
-                      return this.genre.find(genre => movie.genre === genre);
+                      //获取当前movie中的所有genre
+                      let movieGenres = movie.movie.Genre.split(", ");
+                      
+                      let matched = true;                    
+                      this.genre.forEach(genre => {
+                          if(movieGenres.indexOf(genre) === -1){
+                              matched = false;
+                          }
+                      });
+                      return matched;
                   }
                   
               }  
