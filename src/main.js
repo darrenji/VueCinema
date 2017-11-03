@@ -22,10 +22,9 @@ Object.defineProperty(Vue.prototype, '$bus', {get(){return this.$root.bus}});
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
+import routes from './util/routes';
 const router = new VueRouter({
-    routes:[
-        {path: '/', component: Overview}
-    ]
+    routes
 });
 
 new Vue({
