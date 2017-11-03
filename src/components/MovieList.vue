@@ -59,7 +59,9 @@
                         .filter(movie =>movie.sessions.find(this.sessionPassesTimeFilter));
                 },
                 noResults(){
-                    return 'No results';
+                    let times = this.time.join(', ');
+                    let genres = this.genre.join(', ');
+                    return `No results for ${times}${times.length && genres.length ? ', ': ''}${genres}.`;
                 }
             },
             components: {
