@@ -63,6 +63,10 @@ genre是一个数组，从movie中获取的genre也是一个数组比如叫做mo
 
 判断过滤条件选择了几个，和今天this.day比较，以及判断time数组元素选择了哪个。
 
-> MovieItem组件的数据从哪哪里来的？
+> MovieItem组件的数据从哪里来的？
 
-是通过movie这个props中的属性获取到数据，
+是通过movie这个props中的属性获取到数据.
+
+> 为什么DaySelect选择一个日期，MovieItem中的日期也跟着变化呢？
+
+当在DaySelect组件中选择一个日期，有了一个点击事件，就通过`this.$bus.$emit('set-day',day);`把事件传播出去，然后根组件Overview中通过`this.$bus.$on('set-day', setDay.bind(this));`对根组件中data中的变量day进行设置，然后这个day的变量值通过`<movie-list v-bind:genre="genre" v-bind:time="time" v-bind:movies="movies" v-bind:day="day"></movie-list>`给到了MovieList组件，MovieList组件通过`v-for="session in filteredSession(movie.sessions)`把MovieItem中的slot坑显示出来，而filteredSession用到的过滤逻辑就和MovieList组件中的day变量有关。
