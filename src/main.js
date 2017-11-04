@@ -47,11 +47,19 @@ new Vue({
     router
 });
 
+import {addClass, removeClass} from './util/helpers';
+
 Vue.directive('tooltip', {
    bind(el, bindings){
        let span = document.createElement('SPAN');
        let text = document.createTextNode('Seats available:200');
        span.appendChild(text);
+       addClass(span, 'tooltip');
        el.appendChild(span);
+       
+       let div = el.getElementsByTagName('DIV')[0];
+       div.addEventListener('mouseover', function(){
+          console.log('mouseover'); 
+       });
    } 
 });
