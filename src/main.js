@@ -42,6 +42,7 @@ new Vue({
             this.movies = response.data;
         });
         this.$bus.$on('check-filter', checkFilter.bind(this));
+        this.$bus.$on('set-day', (day) => {this.day = day})
     },
     router
 });
